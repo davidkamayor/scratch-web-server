@@ -155,9 +155,9 @@ function bufPush(buf: DynBuf, data: Buffer): void {
     const grown = Buffer.alloc(cap);
     buf.data.copy(grown, 0, 0);
     buf.data = grown;
-    data.copy(buf.data, buf.length, 0);
-    buf.length = newLen;
   }
+  data.copy(buf.data, buf.length, 0);
+  buf.length = newLen;
 }
 
 type DynBuf = {
